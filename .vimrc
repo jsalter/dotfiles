@@ -36,3 +36,7 @@ let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 
 filetype plugin indent on          " load filetype plugin and indent files
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
