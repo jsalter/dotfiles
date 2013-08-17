@@ -29,6 +29,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 colorscheme solarized
 Bundle 'bling/vim-airline'
