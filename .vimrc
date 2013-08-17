@@ -40,6 +40,7 @@ filetype plugin indent on          " load filetype plugin and indent files
 
 " autocommands
 au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+au FileType * setlocal fo-=r
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
