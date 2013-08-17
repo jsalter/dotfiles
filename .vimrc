@@ -21,6 +21,12 @@ set laststatus=2                   " show status line always
 set list                           " display unprintable characters
 set listchars=tab:\ \ ,trail:·     " show tabs and trailing spaces
 
+if has('gui_running')
+  if has('mac')
+    set guifont=Sauce\ Code\ Powerline:h13
+  endif
+endif
+
 " http://github.com/gmarik/vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
