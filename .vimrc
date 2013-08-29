@@ -45,6 +45,7 @@ let g:airline_powerline_fonts=1
 filetype plugin indent on          " load filetype plugin and indent files
 
 " autocommands
+au FileType gitconfig setlocal noexpandtab
 au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 au FileType * setlocal fo-=r
 
