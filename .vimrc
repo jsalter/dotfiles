@@ -45,10 +45,25 @@ let g:airline_powerline_fonts=1
 filetype plugin indent on          " load filetype plugin and indent files
 
 " autocommands
-au FileType gitconfig setlocal noexpandtab
-au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-au FileType * setlocal fo-=r
-au BufRead * setlocal cpo+=J
+augroup ft_gitconfig
+  au!
+  au FileType gitconfig setlocal noexpandtab
+augroup END
+
+augroup ft_python
+  au!
+  au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+augroup END
+
+augroup comments
+  au!
+  au FileType * setlocal fo-=r
+augroup END
+
+augroup twospace
+  au!
+  au BufRead * setlocal cpo+=J
+augroup END
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
