@@ -48,6 +48,7 @@ filetype plugin indent on          " load filetype plugin and indent files
 au FileType gitconfig setlocal noexpandtab
 au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 au FileType * setlocal fo-=r
+au BufRead * setlocal cpo+=J
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
