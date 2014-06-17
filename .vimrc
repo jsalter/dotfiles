@@ -27,22 +27,27 @@ if has('gui_running')
   endif
 endif
 
-" http://github.com/gmarik/vundle
+" http://github.com/gmarik/Vundle.vim
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+
+" Color schemes
+Plugin 'altercation/vim-colors-solarized'
+
+" Required, plugins available after
+call vundle#end()
+filetype plugin indent on          " load filetype plugin and indent files
+
 colorscheme solarized
-Bundle 'bling/vim-airline'
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
-
-filetype plugin indent on          " load filetype plugin and indent files
 
 " autocommands
 augroup ft_gitconfig
