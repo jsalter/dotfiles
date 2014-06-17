@@ -38,6 +38,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
+Plugin 'wting/rust.vim'
+Plugin 'vim-pandoc/vim-pantondoc'
+Plugin 'vim-pandox/vim-pandoc-syntax'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -59,6 +62,11 @@ augroup END
 augroup ft_python
   au!
   au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+augroup END
+
+augroup ft_haskell
+  au!
+  au FileType haskell setlocal expandtb shiftwidth=4 softtabstop=4
 augroup END
 
 augroup comments
