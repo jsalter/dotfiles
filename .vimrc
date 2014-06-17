@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible
 
 set history=256                    " remember n commands
