@@ -54,23 +54,11 @@ let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 
 " autocommands
-augroup ft_gitconfig
+augroup filetypes
   au!
   au FileType gitconfig setlocal noexpandtab
-augroup END
-
-augroup ft_python
-  au!
   au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-augroup END
-
-augroup ft_haskell
-  au!
   au FileType haskell setlocal expandtb shiftwidth=4 softtabstop=4
-augroup END
-
-augroup comments
-  au!
   au FileType * setlocal fo-=r
 augroup END
 
