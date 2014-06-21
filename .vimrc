@@ -40,7 +40,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'wting/rust.vim'
 Plugin 'vim-pandoc/vim-pantondoc'
-Plugin 'vim-pandox/vim-pandoc-syntax'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
