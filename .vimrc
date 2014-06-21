@@ -42,6 +42,7 @@ Plugin 'wting/rust.vim'
 Plugin 'vim-pandoc/vim-pantondoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'pgdouyon/vimroom'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
