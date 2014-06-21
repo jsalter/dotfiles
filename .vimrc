@@ -41,6 +41,7 @@ Plugin 'bling/vim-airline'
 Plugin 'wting/rust.vim'
 Plugin 'vim-pandoc/vim-pantondoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'plasticboy/vim-markdown'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -52,6 +53,7 @@ filetype plugin indent on          " load filetype plugin and indent files
 colorscheme solarized
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
+let g:vim_markdown_folding_disabled=1
 
 " autocommands
 augroup filetypes
