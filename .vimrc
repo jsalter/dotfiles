@@ -25,6 +25,8 @@ set listchars=tab:\ \ ,trail:·     " show tabs and trailing spaces
 if has('gui_running')
   if has('mac')
     set guifont=Sauce\ Code\ Powerline:h13
+  elseif has('gui_gtk2')
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
   endif
 endif
 
