@@ -23,6 +23,17 @@ set list                           " display unprintable characters
 set listchars=tab:\ \ ,trail:·     " show tabs and trailing spaces
 
 if has('gui_running')
+  " hide menubar
+  set go-=m
+  " hide toolbar
+  set go-=T
+
+  " hide scrollbars
+  set go-=l
+  set go-=L
+  set go-=r
+  set go-=R
+
   if has('mac')
     set guifont=Sauce\ Code\ Powerline:h13
   elseif has('gui_gtk2')
