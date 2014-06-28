@@ -66,6 +66,9 @@ augroup twospace
   au BufRead * setlocal cpo+=J
 augroup END
 
+inoremap <C-u> <esc>mzgUiw`za
+nnoremap zh mzzt10<c-u>`z
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
