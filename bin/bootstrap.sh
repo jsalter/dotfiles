@@ -20,6 +20,6 @@ islink ".tmux.conf"       ".tmux.conf"
 islink ".vimrc"           ".vimrc"
 islink ".inputrc"         ".inputrc"
 islink "fish/config.fish" ".config/fish/config.fish"
-islink "fish/functions"   ".config/fish/functions"
+islink "fish/functions"   ".config/fish"
 
 echo done
