@@ -4,6 +4,8 @@ set nocompatible
 set history=256                    " remember n commands
 set hidden                         " switch buffers without saving
 
+let mapleader=","
+
 " formatting
 set formatoptions-=r               " don't autoinsert comment leader after enter
 set backspace=indent,eol,start
@@ -57,6 +59,7 @@ Plugin 'vim-pandoc/vim-pantondoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'pgdouyon/vimroom'
+Plugin 'majutsushi/tagbar'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -71,6 +74,8 @@ endif
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 let g:vim_markdown_folding_disabled=1
+nmap <leader>= :TagbarToggle<CR>
+let g:tagbar_autofocus=1
 
 " autocommands
 augroup filetypes
