@@ -17,9 +17,15 @@ mkpath ~/src
 test -d ~/.dotfiles || git clone https://jsalter@bitbucket.org/jsalter/dotfiles.git ~/.dotfiles
 
 islink ".tmux.conf"       ".tmux.conf"
-islink ".vimrc"           ".vimrc"
+islink "vim"              ".vim"
+islink "vim/vimrc"        ".vimrc"
 islink ".inputrc"         ".inputrc"
 islink "fish/config.fish" ".config/fish/config.fish"
-islink "fish/functions"   ".config/fish"
+islink "fish/functions"   ".config/fish/functions"
+
+test -d ~/.vim/bundle/Vundle.vim || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall! +qall
+cd ~/.vim/bundle/YouCompleteMe
+~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 
 echo done

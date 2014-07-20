@@ -65,7 +65,9 @@ Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on          " load filetype plugin and indent files
 
-colorscheme solarized
+if (exists('g:solarized_termcolors'))
+  colorscheme solarized
+endif
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 let g:vim_markdown_folding_disabled=1
