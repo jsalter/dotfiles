@@ -51,5 +51,5 @@ source (rbenv init -|psub)
 source ~/src/z-fish/z.fish
 
 if test -s $HOME/.config/fish/local.fish
-  source .$HOME/.config/fish/local.fish
+  source $HOME/.config/fish/local.fish
 end
