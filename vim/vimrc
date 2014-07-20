@@ -77,7 +77,7 @@ augroup filetypes
   au!
   au FileType gitconfig setlocal noexpandtab
   au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-  au FileType haskell setlocal expandtb shiftwidth=4 softtabstop=4
+  au FileType haskell setlocal expandtab shiftwidth=4 softtabstop=4
   au FileType * setlocal fo-=r
 augroup END
 
