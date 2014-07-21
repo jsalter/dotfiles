@@ -76,6 +76,7 @@ let g:airline_powerline_fonts=1
 let g:vim_markdown_folding_disabled=1
 nmap <leader>= :TagbarToggle<CR>
 let g:tagbar_autofocus=1
+let g:syntastic_tex_chktex_args='-n1'
 
 " autocommands
 augroup filetypes
