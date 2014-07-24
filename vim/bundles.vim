@@ -1,7 +1,6 @@
 " Separate Vundle configuration file to fix errors when installing
 " bundles for the first time.
 " http://gmarik.info/blog/2011/05/17/chicken-or-egg-dilemma
-set nocompatible
 
 " http://github.com/gmarik/Vundle.vim
 filetype off

@@ -1,4 +1,5 @@
 set shell=/bin/bash
+set nocompatible
 
 " Vundle and bundles configuration
 source ~/.vim/bundles.vim
