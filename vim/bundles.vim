@@ -19,6 +19,8 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'pgdouyon/vimroom'
 Plugin 'majutsushi/tagbar'
+Plugin 'dag/haskellFold'
+Plugin 'kien/ctrlp.vim'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
