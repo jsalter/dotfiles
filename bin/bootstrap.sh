@@ -20,6 +20,7 @@ islink ".tmux.conf"       ".tmux.conf"
 islink "vim"              ".vim"
 islink "vim/vimrc"        ".vimrc"
 islink ".inputrc"         ".inputrc"
+islink "gitignore"        ".gitignore"
 islink "fish/config.fish" ".config/fish/config.fish"
 islink "fish/functions"   ".config/fish/functions"
 
