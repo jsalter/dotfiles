@@ -21,6 +21,7 @@ Plugin 'pgdouyon/vimroom'
 Plugin 'majutsushi/tagbar'
 Plugin 'dag/haskellFold'
 Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
