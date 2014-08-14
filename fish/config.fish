@@ -21,7 +21,8 @@ function prepend_to_path -d "Prepend the given dir to PATH if it exists and is n
 end
 
 function ..; cd ..; end
-function ...; cd ...; end
+function ...; cd ../..; end
+function ....; cd ../../..; end
 
 set -gx BOXEN_HOME /opt/boxen
 set -gx PATH "/sbin"
