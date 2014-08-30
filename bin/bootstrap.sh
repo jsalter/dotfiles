@@ -29,4 +29,9 @@ vim -N -u ~/.dotfiles/vim/bundles.vim +PluginInstall! +qall
 cd ~/.vim/bundle/YouCompleteMe
 ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 
+test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [ -n "$(command -v reattach-to-user-namespace)" ]; then
+  echo -e '#!/usr/bin/env bash\nexec "$@"' > ~/bin/reattach-to-user-namespace
+fi
+
 echo done
