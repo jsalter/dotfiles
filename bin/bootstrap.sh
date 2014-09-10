@@ -6,13 +6,13 @@ function islink {
   test -L "$HOME/$2" || ln -s "$HOME/.dotfiles/$1" "$HOME/$2"
 }
 
-function mkpath {
+function ispath {
   test -d "$1" || mkdir -p "$1"
 }
 
-mkpath ~/.config/fish
-mkpath ~/bin
-mkpath ~/src
+ispath ~/.config/fish
+ispath ~/bin
+ispath ~/src
 
 test -d ~/.dotfiles || git clone https://jsalter@bitbucket.org/jsalter/dotfiles.git ~/.dotfiles
 
