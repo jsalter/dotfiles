@@ -4,15 +4,15 @@ function cuts; cut -d' ' $argv; end
 function ef; vim ~/.config/fish/config.fish; end
 function ev; vim ~/.vimrc; end
 
-function psg -d "Grep for a running process, returning its PID and full string"
+function psg -d "Greps for a running process, returning its PID and full string"
     ps auxww | grep -i --color=always $argv | grep -v grep | collapse | cuts -f 2,11-
 end
 
-function cuts
+function cuts -d "Removes space-delimited sections from each line of files"
   cut -d' ' $argv
 end
 
-function prepend_to_path -d "Prepend the given dir to PATH if it exists and is not already in it?"
+function prepend_to_path -d "Prepends given dir to PATH if it exists and is not already in PATH"
   if test -d $argv[1]
     if not contains $argv[1] $PATH
       set -gx PATH "$argv[1]" $PATH
