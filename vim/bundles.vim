@@ -24,6 +24,7 @@ Plugin 'dag/haskellFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-obsession'
+Plugin 'fs111/pydoc.vim'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
