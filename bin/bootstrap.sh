@@ -2,27 +2,25 @@
 set -e
 echo "requires: git tmux fish vim"
 
-function islink {
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+
+function ensure_link {
   test -L "$HOME/$2" || ln -s "$HOME/.dotfiles/$1" "$HOME/$2"
 }
 
-function ispath {
-  test -d "$1" || mkdir -p "$1"
-}
-
-ispath ~/.config/fish
-ispath ~/bin
-ispath ~/src
+mkdir -p ~/.config/fish
+mkdir -p ~/bin
+mkdir -p ~/src
 
 test -d ~/.dotfiles || git clone https://jsalter@bitbucket.org/jsalter/dotfiles.git ~/.dotfiles
 
-islink ".tmux.conf"       ".tmux.conf"
-islink "vim"              ".vim"
-islink "vim/vimrc"        ".vimrc"
-islink ".inputrc"         ".inputrc"
-islink "gitignore"        ".gitignore"
-islink "fish/config.fish" ".config/fish/config.fish"
-islink "fish/functions"   ".config/fish/functions"
+ensure_link ".tmux.conf"       ".tmux.conf"
+ensure_link "vim"              ".vim"
+ensure_link "vim/vimrc"        ".vimrc"
+ensure_link ".inputrc"         ".inputrc"
+ensure_link "gitignore"        ".gitignore"
+ensure_link "fish/config.fish" ".config/fish/config.fish"
+ensure_link "fish/functions"   ".config/fish/functions"
 
 test -d ~/.vim/bundle/Vundle.vim || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -N -u ~/.dotfiles/vim/bundles.vim +PluginInstall! +qall
@@ -32,6 +30,7 @@ if [ "$OS" = "darwin" ]; then
 elif [ "$OS" = "linux" ]; then
   ~/.vim/bundle/YouCompleteMe/install.sh
 fi
+test -d ~/src/z-fish/z.fish || git clone https://github.com/roryokane/z-fish ~/src/z-fish
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 if [ -z "$(command -v reattach-to-user-namespace)" ]; then
