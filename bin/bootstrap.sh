@@ -27,7 +27,11 @@ islink "fish/functions"   ".config/fish/functions"
 test -d ~/.vim/bundle/Vundle.vim || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -N -u ~/.dotfiles/vim/bundles.vim +PluginInstall! +qall
 cd ~/.vim/bundle/YouCompleteMe
-~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+if [ "$OS" = "darwin" ]; then
+  ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+elif [ "$OS" = "linux" ]; then
+  ~/.vim/bundle/YouCompleteMe/install.sh
+fi
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 if [ -z "$(command -v reattach-to-user-namespace)" ]; then
