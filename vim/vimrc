@@ -129,7 +129,7 @@ augroup twospace
   au BufRead * setlocal cpo+=J
 augroup END
 
-inoremap <C-u> <esc>mzgUiw`za
+inoremap <C-u> <esc>gUiwea
 nnoremap zh mzzt10<c-u>`z
 
 if filereadable(expand("~/.vimrc.local"))
