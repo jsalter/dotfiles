@@ -65,35 +65,6 @@ if !isdirectory(expand(s:dir) . '/swap')
 endif
 if isdirectory(expand(s:dir))
   if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
-    let &undodir=expand(s:dir) . '/undo//,' . &undodir
-  endif
-  if &backupdir =~# '^\.,'
-    let &backupdir=expand(s:dir) . '/backup//,' . &backupdir
-  endif
-  if &directory =~# '^\.,'
-    let &directory=expand(s:dir) . '/swap//,' . &directory
-  endif
-endif
-
-" backups
-set backup
-set noswapfile
-if exists('+undofile')
-  set undofile
-endif
-
-let s:dir=match(system('uname'), 'Darwin') > -1 ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
-if !isdirectory(expand(s:dir) . '/undo')
-  call mkdir(expand(s:dir) . '/undo', 'p')
-endif
-if !isdirectory(expand(s:dir) . '/backup')
-  call mkdir(expand(s:dir) . '/backup', 'p')
-endif
-if !isdirectory(expand(s:dir) . '/swap')
-  call mkdir(expand(s:dir) . '/swap', 'p')
-endif
-if isdirectory(expand(s:dir))
-  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
     let &undodir = expand(s:dir) . '/undo//,' . &undodir
   endif
   if &backupdir =~# '^\.,'
