@@ -30,7 +30,7 @@ if [ "$OS" = "darwin" ]; then
 elif [ "$OS" = "linux" ]; then
   ~/.vim/bundle/YouCompleteMe/install.sh
 fi
-test -d ~/src/z-fish/z.fish || git clone https://github.com/roryokane/z-fish ~/src/z-fish
+test -f ~/src/z-fish/z.fish || git clone https://github.com/roryokane/z-fish ~/src/z-fish
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 if [ -z "$(command -v reattach-to-user-namespace)" ]; then
