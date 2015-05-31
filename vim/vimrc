@@ -1,4 +1,4 @@
-set shell=/bin/bash
+set shell=bash
 set nocompatible
 
 " Vundle and bundles configuration
