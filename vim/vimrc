@@ -85,6 +85,7 @@ let g:syntastic_tex_chktex_args='-n1'
 let g:ctrlp_map='<leader>,'
 let g:ctrlp_cmd='CtrlP'
 nnoremap <leader>u :GundoToggle<CR>
+let g:pandoc#modules#disabled=["folding"]
 
 " autocommands
 augroup filetypes
