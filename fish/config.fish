@@ -46,6 +46,9 @@ if [ (uname) = 'Darwin' ]
   set -gx RBENV_ROOT $BOXEN_HOME/rbenv
 
   source (rbenv init -|psub)
+else
+  prepend_to_path "$HOME/opt/bin"
+  prepend_to_path "$HOME/bin"
 end
 
 set -g -x fish_greeting ''
