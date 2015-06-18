@@ -33,9 +33,11 @@ fi
 test -f ~/src/z-fish/z.fish || git clone https://github.com/roryokane/z-fish ~/src/z-fish
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-if [ -z "$(command -v reattach-to-user-namespace)" ]; then
-  echo -e '#!/usr/bin/env bash\nexec "$@"' > ~/bin/reattach-to-user-namespace
-  chmod +x ~/bin/reattach-to-user-namespace
+if [ "$OS" = "darwin" -a -z $(uname -r | cut -f1 -d.) -lt 14 ]; then
+  # < 10.14 (Yosemite)
+  if [ -z "$(command -v reattach-to-user-namespace)" ]; then
+    echo "Install reattach-to-user-namespace with 'brew install reattach-to-user-namespace'"
+  fi
 fi
 
 echo done
