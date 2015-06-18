@@ -47,6 +47,7 @@ if [ (uname) = 'Darwin' ]
 
   source (rbenv init -|psub)
 else
+  ulimit -u 2048
   prepend_to_path "$HOME/opt/bin"
   prepend_to_path "$HOME/bin"
 end
