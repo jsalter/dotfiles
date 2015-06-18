@@ -25,6 +25,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'fs111/pydoc.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'mattn/emmet-vim'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
