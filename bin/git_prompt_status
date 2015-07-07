@@ -18,5 +18,5 @@ if $(echo "$INDEX" | grep '^[AMDR]. ' &> /dev/null); then
     STATUS="!$STATUS"
 fi
 
-echo -n $STATUS
+echo -n "$STATUS"
 
