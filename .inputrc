@@ -1,3 +1,5 @@
 # ~/.inputrc
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+$if Bash
+  "\e[A": history-search-backward
+  "\e[B": history-search-forward
+$endif
