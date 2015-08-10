@@ -14,10 +14,10 @@ mkdir -p ~/src
 
 test -d ~/.dotfiles || git clone https://jsalter@bitbucket.org/jsalter/dotfiles.git ~/.dotfiles
 
-ensure_link ".tmux.conf"       ".tmux.conf"
+ensure_link "tmux.conf"        ".tmux.conf"
 ensure_link "vim"              ".vim"
 ensure_link "vim/vimrc"        ".vimrc"
-ensure_link ".inputrc"         ".inputrc"
+ensure_link "inputrc"          ".inputrc"
 ensure_link "gitignore"        ".gitignore"
 ensure_link "fish/config.fish" ".config/fish/config.fish"
 ensure_link "fish/functions"   ".config/fish/functions"
