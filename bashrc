@@ -1,5 +1,6 @@
 ulimit -u 2048
 
+# http://vim.wikia.com/wiki/256_colors_in_vim
 if [ "$TERM" = "xterm" ]; then
   if [ -z "$COLORTERM" ]; then
     if [ -z "$XTERM_VERSION" ]; then
@@ -51,11 +52,11 @@ if [ -z "$SCREEN_COLORS" ]; then
       export TERM=xterm
       ;;
     rxvt*)
-      echo "Unknown terminal $TERM. Falling back to 'xterm'."
+      echo "Unknown terminal $TERM. Falling back to 'rxvt'."
       export TERM=rxvt
       ;;
     screen*)
-      echo "Unknown terminal $TERM. Falling back to 'xterm'."
+      echo "Unknown terminal $TERM. Falling back to 'screen'."
       export TERM=screen
       ;;
   esac
