@@ -1,5 +1,8 @@
 ulimit -u 2048
 
+# don't continue if not interactive
+[[ "$-" != *i* ]] && return
+
 # http://vim.wikia.com/wiki/256_colors_in_vim
 if [ "$TERM" = "xterm" ]; then
   if [ -z "$COLORTERM" ]; then
