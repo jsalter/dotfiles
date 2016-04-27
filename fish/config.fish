@@ -26,7 +26,6 @@ function ...; cd ../..; end
 function ....; cd ../../..; end
 
 if [ (uname) = 'Darwin' ]
-  set -gx BOXEN_HOME /opt/boxen
   set -gx PATH "/sbin"
   prepend_to_path "/sbin"
   prepend_to_path "/usr/sbin"
@@ -34,17 +33,8 @@ if [ (uname) = 'Darwin' ]
   prepend_to_path "/usr/bin"
   prepend_to_path "/usr/local/bin"
   prepend_to_path "$HOME/bin"
-  prepend_to_path "$BOXEN_HOME/homebrew/sbin"
-  prepend_to_path "$BOXEN_HOME/homebrew/bin"
-  prepend_to_path "$BOXEN_HOME/bin"
-  prepend_to_path "$BOXEN_HOME/rbenv/plugins/ruby-build/bin"
-  prepend_to_path "$BOXEN_HOME/rbenv/bin"
   prepend_to_path "$HOME/.rbenv/shims"
   prepend_to_path "$HOME/.cabal/bin"
-  set -gx MANPATH $BOXEN_HOME/homebrew/share/man $MANPATH
-  set -gx HOMEBREW_CACHE $BOXEN_HOME/cache/homebrew
-  set -gx CFLAGS "-I$BOXEN_HOME/homebrew/include"
-  set -gx RBENV_ROOT $BOXEN_HOME/rbenv
 
   source (rbenv init -|psub)
 else
