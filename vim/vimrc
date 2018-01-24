@@ -1,8 +1,39 @@
 set shell=bash
 set nocompatible
 
-" Vundle and bundles configuration
-source ~/.vim/bundles.vim
+" plugin configuration
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive', { 'on': 'Gstatus' }
+Plug 'tpope/vim-git'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
+Plug 'itchyny/lightline.vim'
+Plug 'wting/rust.vim'
+Plug 'vim-pandoc/vim-pantondoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'plasticboy/vim-markdown'
+Plug 'pgdouyon/vimroom'
+Plug 'majutsushi/tagbar'
+Plug 'dag/haskellFold'
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-obsession'
+Plug 'fs111/pydoc.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'mattn/emmet-vim'
+Plug 'kovisoft/slimv'
+Plug 'mileszs/ack.vim'
+
+" Color schemes
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
 
 set history=256                    " remember n commands
 set hidden                         " switch buffers without saving
@@ -86,6 +117,9 @@ let g:ctrlp_map='<leader>,'
 let g:ctrlp_cmd='CtrlP'
 nnoremap <leader>u :GundoToggle<CR>
 let g:pandoc#modules#disabled=["folding"]
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+endif
 
 " autocommands
 augroup filetypes
