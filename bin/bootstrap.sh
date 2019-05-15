@@ -25,7 +25,7 @@ if [ "$OS" = "linux" -a "$(command -v terminator)" ]; then
   ensure_link "terminator/config"  ".config/terminator/config"
 fi
 
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 cd ~/.vim/plugged/YouCompleteMe
 if [ "$OS" = "darwin" ]; then
   ~/.vim/plugged/YouCompleteMe/install.sh --clang-completer
