@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-echo "requires: git tmux fish vim"
+echo "requires: git tmux fish vim cmake"
 
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
