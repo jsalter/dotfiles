@@ -35,8 +35,6 @@ if [ (uname) = 'Darwin' ]
   prepend_to_path "$HOME/bin"
   prepend_to_path "$HOME/.rbenv/shims"
   prepend_to_path "$HOME/.cabal/bin"
-
-  source (rbenv init -|psub)
 else
   ulimit -u 2048
   prepend_to_path "$HOME/opt/bin"
