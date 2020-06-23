@@ -2,8 +2,9 @@ function collapse; sed -e 's/  */ /g'; end
 function cuts; cut -d' ' $argv; end
 
 function ef; vim ~/.config/fish/config.fish; end
-function ev; vim ~/.vimrc; end
+function ep; vim ~/.ipython/profile_default/ipython_config.py; end
 function et; vim ~/.tmux.conf; end
+function ev; vim ~/.vimrc; end
 
 function psg -d "Greps for a running process, returning its PID and full string"
     ps auxww | grep -i --color=always $argv | grep -v grep | collapse | cuts -f 2,11-
