@@ -1,0 +1,12 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/google/go-jsonnet
+    rev: v0.18.0
+    hooks:
+    -   id: jsonnet-format
+    -   id: jsonnet-lint
