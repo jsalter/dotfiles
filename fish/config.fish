@@ -45,8 +45,6 @@ end
 set -g -x fish_greeting ''
 set -g -x EDITOR vim
 
-source ~/src/z-fish/z.fish
-
 if test -s $HOME/.config/fish/local.fish
   source $HOME/.config/fish/local.fish
 end
