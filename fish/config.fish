@@ -22,6 +22,14 @@ function prepend_to_path -d "Prepends given dir to PATH if it exists and is not 
   end
 end
 
+function append_to_path -d "Appends given dir to PATH if it exists and is not already in PATH"
+  if test -d $argv[1]
+    if not contains $argv[1] $PATH
+      set -gx PATH $PATH "$argv[1]"
+    end
+  end
+end
+
 function ..; cd ..; end
 function ...; cd ../..; end
 function ....; cd ../../..; end
