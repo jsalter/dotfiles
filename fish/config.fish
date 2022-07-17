@@ -41,9 +41,9 @@ if [ (uname) = 'Darwin' ]
   prepend_to_path "/bin"
   prepend_to_path "/usr/bin"
   prepend_to_path "/usr/local/bin"
+  prepend_to_path "/opt/homebrew/bin"
+  prepend_to_path "$HOME/.local/bin"
   prepend_to_path "$HOME/bin"
-  prepend_to_path "$HOME/.rbenv/shims"
-  prepend_to_path "$HOME/.cabal/bin"
 else
   ulimit -u 2048
   prepend_to_path "$HOME/opt/bin"
