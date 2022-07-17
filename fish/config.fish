@@ -33,6 +33,7 @@ end
 function ..; cd ..; end
 function ...; cd ../..; end
 function ....; cd ../../..; end
+function mkd; mkdir -p $argv && cd $argv; end
 
 if [ (uname) = 'Darwin' ]
   set -gx PATH "/sbin"
