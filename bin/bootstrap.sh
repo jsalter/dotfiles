@@ -24,7 +24,7 @@ ensure_link "fish/config.fish"   ".config/fish/config.fish"
 
 for x in $HOME/src/dotfiles/fish/functions/*; do
   f=$(basename $x)
-  ensure_link $(basename $x) ".config/fish/functions/$f"
+  ensure_link $f ".config/fish/functions/$f"
 done
 
 vim +PlugInstall +qall
