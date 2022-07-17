@@ -21,7 +21,11 @@ ensure_link "vim/vimrc"          ".vimrc"
 ensure_link "inputrc"            ".inputrc"
 ensure_link "gitignore"          ".config/git/ignore"
 ensure_link "fish/config.fish"   ".config/fish/config.fish"
-ensure_link "fish/functions"     ".config/fish/functions"
+
+for x in $HOME/src/dotfiles/fish/functions/*; do
+  f=$(basename $x)
+  ensure_link $(basename $x) ".config/fish/functions/$f"
+done
 
 vim +PlugInstall +qall
 
