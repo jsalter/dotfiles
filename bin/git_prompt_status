@@ -19,4 +19,3 @@ if $(echo "$INDEX" | grep '^[AMDR]. ' &> /dev/null); then
 fi
 
 echo -n "$STATUS"
-
