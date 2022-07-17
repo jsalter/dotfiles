@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-echo "requires: git tmux fish vim cmake curl jsonnet"
+echo "requires: git tmux fish vim cmake curl"
 
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
@@ -36,7 +36,21 @@ fish -l -c "fisher list jethrokuan/z >/dev/null" || fish -l -c "fisher install j
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-jsonnet $HOME/src/dotfiles/karabiner/karabiner.jsonnet -o $HOME/src/dotfiles/karabiner/karabiner.json
-ensure_link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
+if ! hash jsonnet 2>/dev/null; then
+  echo "Jsonnet not installed. Skipping Karabiner config."
+else
+  jsonnet $HOME/src/dotfiles/karabiner/karabiner.jsonnet -o $HOME/src/dotfiles/karabiner/karabiner.json
+  ensure_link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
+fi
+
+if [ -f $HOME/src/homebrew-brewfile/Brewfile ]; then
+  test -L "$HOME/.Brewfile" || ln -s "$HOME/src/homebrew-brewfile/Brewfile" "$HOME/.Brewfile"
+  test -L "$HOME/.Brewfile.lock.json" || ln -s "$HOME/src/homebrew-brewfile/Brewfile.lock.json" "$HOME/.Brewfile.lock.json"
+  if ! hash brew 2>/dev/null; then
+    echo "Homebrew not installed. Skipping 'brew bundle'."
+  else
+    brew bundle --global
+  fi
+fi
 
 echo done
