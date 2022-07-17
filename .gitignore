@@ -2,3 +2,4 @@
 vim/autoload
 vim/plugged
 .DS_Store
+karabiner/karabiner.json

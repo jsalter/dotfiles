@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-echo "requires: git tmux fish vim cmake curl"
+echo "requires: git tmux fish vim cmake curl jsonnet"
 
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
@@ -35,5 +35,8 @@ test -f ~/.config/fish/functions/fisher.fish || curl -sSL $FISHER_URL | fish -c 
 fish -l -c "fisher list jethrokuan/z >/dev/null" || fish -l -c "fisher install jethrokuan/z"
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+jsonnet $HOME/src/dotfiles/karabiner/karabiner.jsonnet -o $HOME/src/dotfiles/karabiner/karabiner.json
+ensure_link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
 
 echo done
