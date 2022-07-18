@@ -1,8 +1,10 @@
 function collapse; sed -e 's/  */ /g'; end
 function cuts; cut -d' ' $argv; end
 
+function eb; vim ~/.Brewfile; end
 function ef; vim ~/.config/fish/config.fish; end
 function ep; vim ~/.ipython/profile_default/ipython_config.py; end
+function es; vim ~/.ssh/config; end
 function et; vim ~/.tmux.conf; end
 function ev; vim ~/.vimrc; end
 
