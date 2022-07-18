@@ -49,7 +49,7 @@ if [ -f $HOME/src/homebrew-brewfile/Brewfile ]; then
   if ! hash brew 2>/dev/null; then
     echo "Homebrew not installed. Skipping 'brew bundle'."
   else
-    brew bundle --global
+    env HOMEBREW_COLOR=1 brew bundle --global | grep -v ^Using
   fi
 fi
 
