@@ -7,6 +7,7 @@ function ep; vim ~/.ipython/profile_default/ipython_config.py; end
 function es; vim ~/.ssh/config; end
 function et; vim ~/.tmux.conf; end
 function ev; vim ~/.vimrc; end
+function eb; vim ~/.Brewfile; end
 
 function psg -d "Greps for a running process, returning its PID and full string"
     ps auxww | grep -i --color=always $argv | grep -v grep | collapse | cuts -f 2,11-
