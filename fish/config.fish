@@ -39,7 +39,6 @@ function mkd; mkdir -p $argv && cd $argv; end
 
 if [ (uname) = 'Darwin' ]
   set -gx PATH "/sbin"
-  prepend_to_path "/sbin"
   prepend_to_path "/usr/sbin"
   prepend_to_path "/bin"
   prepend_to_path "/usr/bin"
