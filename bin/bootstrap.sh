@@ -8,19 +8,20 @@ function ensure_link {
   test -L "$HOME/$2" || ln -s "$HOME/src/dotfiles/$1" "$HOME/$2"
 }
 
-mkdir -p ~/.config/fish
+mkdir -p ~/.config/fish/functions
 mkdir -p ~/.config/git
 mkdir -p ~/bin
 mkdir -p ~/src
 
 test -d ~/src/dotfiles || git clone https://github.com/jsalter/dotfiles.git ~/src/dotfiles
 
-ensure_link "tmux.conf"          ".tmux.conf"
-ensure_link "vim"                ".vim"
-ensure_link "vim/vimrc"          ".vimrc"
-ensure_link "inputrc"            ".inputrc"
-ensure_link "gitignore"          ".config/git/ignore"
-ensure_link "fish/config.fish"   ".config/fish/config.fish"
+ensure_link "tmux.conf"            ".tmux.conf"
+ensure_link "vim"                  ".vim"
+ensure_link "vim/vimrc"            ".vimrc"
+ensure_link "inputrc"              ".inputrc"
+ensure_link "gitignore"            ".config/git/ignore"
+ensure_link "fish/config.fish"     ".config/fish/config.fish"
+ensure_link "hammerspoon/init.lua" ".hammerspoon/init.lua"
 
 for x in $HOME/src/dotfiles/fish/functions/*; do
   f=$(basename $x)
