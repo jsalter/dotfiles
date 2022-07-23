@@ -44,8 +44,7 @@ else
 fi
 
 if [ -f $HOME/src/homebrew-brewfile/Brewfile ]; then
-  test -L "$HOME/.Brewfile" || ln -s "$HOME/src/homebrew-brewfile/Brewfile" "$HOME/.Brewfile"
-  test -L "$HOME/.Brewfile.lock.json" || ln -s "$HOME/src/homebrew-brewfile/Brewfile.lock.json" "$HOME/.Brewfile.lock.json"
+  test -L "$HOME/.Brewfile" || ln -sf "$HOME/src/homebrew-brewfile/Brewfile" "$HOME/.Brewfile"
   if ! hash brew 2>/dev/null; then
     echo "Homebrew not installed. Skipping 'brew bundle'."
   else
