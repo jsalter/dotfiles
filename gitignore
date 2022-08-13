@@ -3,3 +3,4 @@ npm-debug.log
 *.iml
 .bak*
 .unison*
+.DS_Store
