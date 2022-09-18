@@ -50,7 +50,7 @@ if [ -f $HOME/src/homebrew-brewfile/Brewfile ]; then
     echo "Homebrew not installed. Skipping 'brew bundle'."
   else
     brew update --auto-update --quiet
-    env HOMEBREW_COLOR=1 brew bundle --global | grep -v ^Using
+    env HOMEBREW_COLOR=1 brew bundle --global --no-lock | grep -v ^Using
   fi
 fi
 
