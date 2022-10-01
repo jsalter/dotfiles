@@ -54,4 +54,6 @@ if [ -f $HOME/src/homebrew-brewfile/Brewfile ]; then
   fi
 fi
 
+test -f $HOME/src/macos/bin/apply.sh && $HOME/src/macos/bin/apply.sh
+
 echo done
