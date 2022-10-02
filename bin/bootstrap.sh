@@ -54,6 +54,12 @@ if [ -f $HOME/src/homebrew-brewfile/Brewfile ]; then
   fi
 fi
 
-test -f $HOME/src/macos/bin/apply.sh && $HOME/src/macos/bin/apply.sh
+# apply any extra configs
+for x in "$HOME"/src/config-*; do
+  if [ -x "$x/bin/apply.sh" ]; then
+    echo "Applying $(basename "$x")"
+    "$x/bin/apply.sh"
+  fi
+done
 
-echo done
+echo "Done"
