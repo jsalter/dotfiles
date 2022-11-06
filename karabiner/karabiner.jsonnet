@@ -84,6 +84,36 @@
             ],
           },
           {
+            description: 'Spacebar to Shift+Control+Option',
+            manipulators: [
+              {
+                type: 'basic',
+                from: {
+                  key_code: 'spacebar',
+                  modifiers: {
+                    optional: [
+                      'any',
+                    ],
+                  },
+                },
+                to: [
+                  {
+                    key_code: 'left_shift',
+                    modifiers: [
+                      'left_control',
+                      'left_option',
+                    ],
+                  },
+                ],
+                to_if_alone: [
+                  {
+                    key_code: 'spacebar',
+                  },
+                ],
+              },
+            ],
+          },
+          {
             description: 'Change caps_lock to control if pressed with other keys, to escape if pressed alone.',
             manipulators: [
               {
