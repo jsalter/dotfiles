@@ -103,6 +103,7 @@
                       'left_control',
                       'left_option',
                     ],
+                    lazy: true
                   },
                 ],
                 to_if_alone: [
