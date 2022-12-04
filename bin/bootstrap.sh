@@ -13,6 +13,10 @@ mkdir -p ~/.config/git
 mkdir -p ~/bin
 mkdir -p ~/src
 
+if [ "$OS" = "darwin" ]; then
+  mkdir -p ~/.hammerspoon
+fi
+
 test -d ~/src/dotfiles || git clone https://github.com/jsalter/dotfiles.git ~/src/dotfiles
 
 ensure_link "tmux.conf"            ".tmux.conf"
@@ -22,6 +26,10 @@ ensure_link "inputrc"              ".inputrc"
 ensure_link "gitignore"            ".config/git/ignore"
 ensure_link "fish/config.fish"     ".config/fish/config.fish"
 ensure_link "hammerspoon/init.lua" ".hammerspoon/init.lua"
+
+if [ "$OS" = "darwin" ]; then
+  ensure_link "hammerspoon/init.lua" ".hammerspoon/init.lua"
+fi
 
 for x in $HOME/src/dotfiles/fish/functions/*; do
   f=$(basename $x)
