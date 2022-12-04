@@ -96,14 +96,17 @@
                     ],
                   },
                 },
-                to: [
+                parameters: {
+                  'basic.to_if_held_down_threshold_milliseconds': 200,
+                },
+                to_if_held_down: [
                   {
                     key_code: 'left_shift',
                     modifiers: [
                       'left_control',
                       'left_option',
                     ],
-                    lazy: true
+                    lazy: true,
                   },
                 ],
                 to_if_alone: [
