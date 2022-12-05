@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -e
+
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+
+function ensure_link {
+  test -L "$HOME/$2" || ln -s "$HOME/src/dotfiles/$1" "$HOME/$2"
+}
+
+mkdir -p ~/.config/fish/functions
+mkdir -p ~/.config/git
+mkdir -p ~/.config/tmux
+mkdir -p ~/bin
+mkdir -p ~/src
+
+if [ "$OS" = "darwin" ]; then
+  mkdir -p ~/.hammerspoon
+fi
+
+test -d ~/src/dotfiles || git clone https://github.com/jsalter/dotfiles.git ~/src/dotfiles
+
+ensure_link "tmux.conf"            ".config/tmux/tmux.conf"
+ensure_link "vim"                  ".vim"
+ensure_link "vim/vimrc"            ".vimrc"
+ensure_link "inputrc"              ".inputrc"
+ensure_link "gitignore"            ".config/git/ignore"
+ensure_link "fish/config.fish"     ".config/fish/config.fish"
+
+if [ "$OS" = "darwin" ]; then
+  ensure_link "hammerspoon/init.lua" ".hammerspoon/init.lua"
+fi
+
+for x in $HOME/src/dotfiles/fish/functions/*; do
+  f=$(basename $x)
+  ensure_link $f ".config/fish/functions/$f"
+done

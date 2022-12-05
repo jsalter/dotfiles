@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+vim +PlugInstall +qall
+
+FISHER_URL=https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
+test -f ~/.config/fish/functions/fisher.fish || curl -sSL $FISHER_URL | fish -c "source && fisher install jorgebucaran/fisher"
+
+fish -l -c "fisher list jethrokuan/z >/dev/null" || fish -l -c "fisher install jethrokuan/z"
+
+test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo -n "Configuring Karabiner..."
+if ! hash jsonnet 2>/dev/null; then
+  echo "SKIPPED"
+else
+  jsonnet $HOME/src/dotfiles/karabiner/karabiner.jsonnet -o $HOME/src/dotfiles/karabiner/karabiner.json
+  ensure_link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
+  echo "OK"
+fi
