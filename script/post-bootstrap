@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+function ensure_link {
+  test -L "$HOME/$2" || ln -s "$HOME/src/dotfiles/$1" "$HOME/$2"
+}
+
 vim +PlugInstall +qall
 
 FISHER_URL=https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
