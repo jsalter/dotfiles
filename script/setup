@@ -4,12 +4,10 @@ set -e
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
 function ensure_link {
+  mkdir -p $(dirname "$HOME/$2")
   test -L "$HOME/$2" || ln -s "$HOME/src/dotfiles/$1" "$HOME/$2"
 }
 
-mkdir -p ~/.config/fish/functions
-mkdir -p ~/.config/git
-mkdir -p ~/.config/tmux
 mkdir -p ~/bin
 mkdir -p ~/src
 

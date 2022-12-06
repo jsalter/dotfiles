@@ -2,6 +2,7 @@
 set -e
 
 function ensure_link {
+  mkdir -p $(dirname "$HOME/$2")
   test -L "$HOME/$2" || ln -s "$HOME/src/dotfiles/$1" "$HOME/$2"
 }
 
