@@ -23,6 +23,7 @@ ensure_link "vim/vimrc"            ".vimrc"
 ensure_link "inputrc"              ".inputrc"
 ensure_link "gitignore"            ".config/git/ignore"
 ensure_link "fish/config.fish"     ".config/fish/config.fish"
+ensure_link "bat/config"           ".config/bat/config"
 
 if [ "$OS" = "darwin" ]; then
   ensure_link "hammerspoon/init.lua" ".hammerspoon/init.lua"
