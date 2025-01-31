@@ -23,3 +23,23 @@ hs.hotkey.bind({"cmd", "shift"}, "c", nil, function()
     hs.pasteboard.setContents(markdown)
   end)
 end)
+
+hs.loadSpoon("SpoonInstall")
+
+-- Reconfigure the Dock by running HiDock
+reconfigDock = function(_)
+  -- log.d('Running HiDock')
+  hs.urlevent.openURLWithBundle("hidock://run")
+end
+
+spoon.SpoonInstall:andUse(
+  "USBDeviceActions",
+  {
+    config = {
+      devices = {
+        ["Kinesis Classic/Advantage/Contoured"] = { fn = reconfigDock }
+      }
+    },
+    start = true
+  }
+)
